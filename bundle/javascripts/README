@@ -1,0 +1,4 @@
+Any plug-ins that require JS + CSS/images should go here.
+
+Any files in this top-level _vendor folder will not be modified by the packaging process (e.g. they will not be
+concatenated into the main JS/CSS bundles). This avoids problems with relative paths to images in the CSS, etc.
