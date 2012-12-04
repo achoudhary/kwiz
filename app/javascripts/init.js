@@ -1,0 +1,1 @@
+kwiz = Em.Application.create();

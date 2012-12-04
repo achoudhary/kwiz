@@ -1,0 +1,59 @@
+.container {
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-image:url('../images/quiz-app_bg_A.jpg');
+	background-repeat:repeat;
+}
+
+.header {
+	margin-top: 6em;
+	height: 30%;
+}
+
+.user-info-container {
+	height: 30%;
+}
+
+.start-button-container {
+	height: 10%;
+}
+
+.help-button-container {
+	height: 10%;
+}
+
+.row {
+	text-align: center;
+}
+
+button.rounded, input.rounded {
+	border: 1px solid #ccc;
+  	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+  	border-radius: 20px;
+  	font-size: 1.5em;
+}
+
+.text-box-container input {
+	background-color: rgba(255, 255, 255, .15);
+	border: 2px;
+	padding-left: 1em;
+	padding-right: 1em;
+	height: 2em;
+	width: 30%;
+	color: white;
+}
+
+p.lead {
+	color: #fff;
+}
+
+.button-container button {
+	width: 20%;
+}
+
+.button-container>div {
+	margin-bottom: 2em;
+}
