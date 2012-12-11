@@ -2,30 +2,88 @@
 <html>
 	<head>
 		<title>Quiz</title>
+        <script type="text/javascript" src="../javascripts/_vendor/jquery-1.7.2.min.js"></script>
+        <script src="http://cloud.github.com/downloads/emberjs/ember.js/ember-0.9.6.min.js"></script>
+        <script src="../javascripts/init.js"></script>
 		<link rel="stylesheet" href="../stylesheets/bootstrap.css" />
 		<link rel="stylesheet" href="../stylesheets/style.css" />
 	</head>
 	<body>
-		<div class="container">
-			<div class='header'>
-				<img src="../images/quiz-logo_A.png" alt="quiz">
-			</div>
-			<div class="user-info-container">
-				<p class="lead">
-					Enter Your Name
-				</p>
-				<div class="text-box-container">
-					<input type="text" class="rounded">
-				</div>
-			</div>
-			<div class="button-container">
-				<div class='start-button-container'>
-					<button class="btn btn-large rounded">Start Game</button>				
-				</div>
-				<div class="help-button-container">
-						<button class="btn btn-large rounded">Help</button>
-				</div>
-			</div>			
-		</div>
+		
+			<script type="text/x-handlebars">
+				{{#if App.quizController.currentIndex}}
+					<div class="container">
+						<div class='header'>
+							<div class="header-panel">
+								<div class="span3">
+									<div class="pull-right">	
+										Question {{App.quizController.currentIndex}}/{{App.quizController.getTotalQuestionsLength}}			
+									</div>
+								</div>
+								<div class="span6 timer">
+								</div>
+								<div class="span3 weightage">
+									<div class="pull-left">
+										
+									</div>
+								</div>						
+							</div>
+						</div>	
+						<div class="question-container">
+							<div class="question-text">
+								{{App.quizController.currentQuestion.question}}
+							</div>
+							{{#if App.quizController.currentQuestion.options}}
+							<div class="options">
+								{{#each App.quizController.currentQuestion.options}}
+									<div class="radio-option">
+										{{view Ember.RadioButton title=this}}
+									</div>
+								{{/each}}
+							</div>
+							{{else}}
+							
+								{{#if App.quizController.currentQuestion.imageUrl}}
+								<div class="image-container"><img {{bindAttr src="App.quizController.currentQuestion.imageUrl"}}/></div>
+								{{/if}}
+								{{view Em.TextField valueBinding="App.quizController.currentQuestion.userAnswer" placeholder="Enter your answer"}}
+								
+							{{/if}}
+							
+						</div>
+						<div class="btn-controls">
+							<button class="btn btn-info" {{action "endQuiz" target="App.quizController"}}>< Quit</button>
+							<button class="btn btn-info next" disabled {{action "loadNextQuestion" target="App.quizController"}}>Next</button>
+							<button class="btn btn-info" {{action "loadNextQuestion" target="App.quizController"}}>Pass ></button>
+						</div>
+					</div>				
+				{{else}}
+				<div class="container">
+					<div class='header'>
+						<img src="../images/quiz-logo_A.png" alt="quiz">
+					</div>
+					<div class="user-info-container">
+						<p class="lead">
+							Enter Your Name
+						</p>
+						<div class="text-box-container">
+		                    
+		                       {{view App.SearchTextField placeholder="Item to do" valueBinding="App.quizController.username"}}
+		                    
+						</div>
+					</div>
+					<div class="button-container">
+						<div class='start-button-container'>
+							<button class="btn btn-large rounded" {{action "startQuiz" target="App.quizController"}}>Start Game</button>						
+						</div>
+						<div class="help-button-container">
+								<button class="btn btn-large rounded">Help</button>
+						</div>
+					</div>
+					</div>
+				{{/if}}
+			</script>
+		
+
 	</body>
 </html>
