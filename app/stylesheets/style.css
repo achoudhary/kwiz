@@ -9,7 +9,6 @@
 
 .header {
 	margin-top: 6em;
-	height: 30%;
 }
 
 .user-info-container {
@@ -62,15 +61,14 @@ p.lead {
 
 
 .question-header-panel {
-	height: 30%;
 	background-color: rgba(0, 0, 0, 0.3);
-	padding-top: 1em;
+	padding: 1em 0;
 	color: #00DEFF;
+	margin-bottom: 10px;
 }
 
 .questions .header {
 	margin-top: 6em;
-	height: 10%;
 }
 
 .question-container {

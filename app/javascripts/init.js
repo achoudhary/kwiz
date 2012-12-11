@@ -153,13 +153,16 @@ App.quizController = Em.ArrayController.create({
 			alert('End Quiz here');
 	},
 	loadNextQuestion: function() {
-		this.pushObject(this.get('currentQuestion'));
+        if(this.get('currentIndex')){
+            this.pushObject(this.get('currentQuestion'));
+        }
 		var index = this.get('currentIndex');
 		this.set('currentIndex', index+1);
 		var question = quiz.questions[index];
 		$('button.next').attr('disabled',true);
+        var questionModel;
 		if(question.type === "radio") {
-			var questionModel = RadioQuestionModel.create({
+			questionModel = RadioQuestionModel.create({
 				question: question.question,
 				type: 'radio',
 				weight: question.weight,
@@ -167,8 +170,20 @@ App.quizController = Em.ArrayController.create({
 				userAnswer: null,
 				options: question.answers
 			});
-			this.set('currentQuestion', questionModel)
-		}
+			
+		}else if(question.type === "fillin"){
+            questionModel = ImageFillinQuestion.create({
+                question: question.question,
+                type: 'fillin',
+                weight: question.weight,
+                answer: null,
+                userAnswer: null,
+                imageURL: question.imageURL
+            });
+        }
+        if(questionModel){
+            this.set('currentQuestion', questionModel);
+        }
 	},
 	computeResult: function() {
 		
