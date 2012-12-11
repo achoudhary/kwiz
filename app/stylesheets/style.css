@@ -36,6 +36,7 @@ button.rounded, input.rounded {
   	font-size: 1.5em;
 }
 
+
 .text-box-container input {
 	background-color: rgba(255, 255, 255, .15);
 	border: 2px;
@@ -56,4 +57,84 @@ p.lead {
 
 .button-container>div {
 	margin-bottom: 2em;
+}
+
+
+
+.question-header-panel {
+	height: 30%;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding-top: 1em;
+	color: #00DEFF;
+}
+
+.questions .header {
+	margin-top: 6em;
+	height: 10%;
+}
+
+.question-container {
+	height: 70%;
+	color: #DDD;
+	font-weight: bolder;
+	font-size: 1.5em;
+}
+
+.options {
+	margin-top: 3em;
+}
+
+.radio-option {
+	margin-bottom: 1em;
+	display: block;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.radio-option .option-container{
+	background: rgba(255, 255, 255, 0.15);
+	padding: 0.5em;
+}
+
+.radio-option .option-container:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+button.next {
+	padding: 0.5em 4em;
+}
+
+button.button-no-background {
+	border: 0px;
+	background: none;
+	color: #DDD;
+	font-size: 1.8em;
+	padding-top: 0.5em;
+	font-weight: bold;
+}
+
+button.button-no-background:hover {
+	color: #ffffff;
+}
+
+.question-text {
+	display: block;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.option-image {
+	display: none;
+}
+
+.selected .option-image>img {
+	width: 2em;
+	height: 1.5em;
+}
+
+.selected .option-image {
+	display: inline-block;
+	float: left;
 }

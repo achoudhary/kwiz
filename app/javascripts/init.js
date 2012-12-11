@@ -121,18 +121,20 @@ App.SearchTextField = Em.TextField.extend({
 
 Ember.RadioButton=Ember.View.extend({
     title:null,
-    defaultTemplate: Ember.Handlebars.compile('<div class="span3 option-container"><div class="option-image"></div><div>{{title}}</div></div>'),
+    defaultTemplate: Ember.Handlebars.compile('<div class="option-container"><div class="option-image"><img src="../images/blue-tick.png" /></div><div>{{title}}</div></div>'),
     click:function(event){
     	var elem=event.srcElement || event.target;
     	$(".options .option-container.selected").each(function(){
     		$(this).removeClass('selected');
+    		$(this).find('.option-image').css('display', 'none');
     	});
     	$(elem).parent().addClass("selected");
+    	$(elem).find('.option-image').css('display', 'inline-block');
     	$('button.next').attr('disabled',false);
     	App.quizController.currentQuestion.userAnswer=this.get('title');
     }
 });
-/*******************************88
+/*******************************
  * Controller
  */
 App.quizController = Em.ArrayController.create({
