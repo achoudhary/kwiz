@@ -189,7 +189,7 @@ App.quizController = Em.ArrayController.create({
 		
 	},
 	getTotalQuestionsLength: function() {
-		return this.get('content').length;
+		return quiz.questions.length;
 	}.property()
 });
 
