@@ -142,18 +142,22 @@ App.quizController = Em.ArrayController.create({
 	questionsAttempted:0,
 	currentQuestion: null,
 	startQuiz: function() {
-	    
 	    this.set('currentIndex', 0);
-	    
 	    this.loadNextQuestion();
 	},
 	endQuiz:function(){
-			alert('End Quiz here');
+        var prompt=confirm('Do you want to end the exam?');
+	   if(prompt){
+        this.computeResult();
+        }
 	},
 	loadNextQuestion: function() {
         if(this.get('currentIndex')){
             this.pushObject(this.get('currentQuestion'));
         }
+        if(this.get('content').length==quiz.questions.length){
+            this.computeResult();
+        }else{
 		var index = this.get('currentIndex');
 		this.set('currentIndex', index+1);
 		var question = quiz.questions[index];
@@ -184,9 +188,13 @@ App.quizController = Em.ArrayController.create({
             App.timerController.reset();
             App.timerController.startTimer();
         }
+        }
 	},
 	computeResult: function() {
-		
+        //Loop through content to get the result
+		$('div.questions').empty();
+        //Change styling accordingly
+        $('div.questions').html("<div class='container'>Thanks for Taking the quiz: You scored </div>");
 	},
 	getTotalQuestionsLength: function() {
 		return quiz.questions.length;
