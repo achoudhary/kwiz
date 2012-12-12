@@ -1,3 +1,3 @@
-kwiz.Model.RadioQuestionModel = kwiz.Model.FillinQuestionModel.extend({
+RadioQuestionModel = Question.extend({
 	options: null
 });

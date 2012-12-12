@@ -1,6 +1,7 @@
-kwiz.Model.Question = Ember.Object.extend({
+Question = Em.Object.extend({
 	question: null,
 	type: null,
 	weight: null,
-	answer: []
+	userAnswer: null,
+	answer: null
 });
