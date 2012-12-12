@@ -181,6 +181,8 @@ App.quizController = Em.ArrayController.create({
         }
         if(questionModel){
             this.set('currentQuestion', questionModel);
+            App.timerController.reset();
+            App.timerController.startTimer();
         }
 	},
 	computeResult: function() {
@@ -191,12 +193,37 @@ App.quizController = Em.ArrayController.create({
 	}.property()
 });
 
-App.timerController = Em.Object.extend({
-	time: 0,
-	start: function() {
-		
-	},
+App.timerController = Em.Object.create({
+	timeLeft:":20",
+    totalTime:20*1000,
 	reset: function() {
-		this.set('time', 0);
-	}
+		this.set('timeLeft',":20");
+	},
+    startTimer:function(){
+        this._startedAt = new Date();
+        var that=this;
+        this.em=setInterval(function() {
+            that.updateTimeLeft.apply(that);
+        }, 1000); 
+    },
+    updateTimeLeft:function(){
+        var now = new Date(),
+        diff = now - this._startedAt;
+        if(diff>=this.get('totalTime')){
+            clearInterval(this.em);
+            App.quizController.loadNextQuestion();
+        }
+        this.set('timeLeft', this.formatTime(this.get('totalTime') - diff));
+    },
+    formatTime:function(str){
+        var seconds = parseInt(str/1000, 10),
+        minutes = parseInt(seconds/60, 10);
+    
+        function pad(num) {
+            if (num < 10) return '0' + num;
+            else return num.toString();
+        }
+
+        return pad(minutes) + ':' + pad(seconds - minutes * 60);    
+    }
 });
