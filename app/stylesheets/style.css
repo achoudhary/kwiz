@@ -9,6 +9,7 @@
 
 .header {
 	margin-top: 6em;
+	height: 30%;
 }
 
 .user-info-container {
@@ -60,15 +61,17 @@ p.lead {
 
 
 
+
 .question-header-panel {
+	height: 30%;
 	background-color: rgba(0, 0, 0, 0.3);
-	padding: 1em 0;
+	padding-top: 1em;
 	color: #00DEFF;
-	margin-bottom: 10px;
 }
 
 .questions .header {
 	margin-top: 6em;
+	height: 10%;
 }
 
 .question-container {
@@ -90,7 +93,7 @@ p.lead {
 	margin-right: auto;
 }
 
-.radio-option .option-container{
+.radio-option .option-container {
 	background: rgba(255, 255, 255, 0.15);
 	padding: 0.5em;
 }
@@ -124,7 +127,18 @@ button.button-no-background:hover {
 }
 
 .option-image {
-	display: none;
+	visibility: hidden;
+	float: left;
+	width: 2em;
+	height: 1.5em;
+}
+
+.selected {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.option-text {
+	padding-right: 2em;	
 }
 
 .selected .option-image>img {
@@ -133,6 +147,5 @@ button.button-no-background:hover {
 }
 
 .selected .option-image {
-	display: inline-block;
-	float: left;
+	visibility: visible;
 }
