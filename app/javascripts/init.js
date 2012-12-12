@@ -184,6 +184,7 @@ App.quizController = Em.ArrayController.create({
 			});
 
 		}else if(question.type === "fillin"){
+			$('button.next').attr('disabled',false);
             questionModel = ImageFillinQuestion.create({
                 question: question.question,
                 type: 'fillin',
@@ -204,7 +205,7 @@ App.quizController = Em.ArrayController.create({
         App.timerController.reset();
         var answered=this.get('content'),
         questions=quiz.questions;
-        var i=0,score=0;
+        var i=0,score= 0;
         for(i=0;i<answered.length;i++){
             if(answered[i].userAnswer==questions[i].correctAnswer){
                 score+=answered[i].weight;
@@ -230,9 +231,9 @@ App.timerController = Em.Object.create({
     startTimer:function(){
         this._startedAt = new Date();
         var that=this;
-        this.em=setInterval(function() {
+        /*this.em=setInterval(function() {
             that.updateTimeLeft.apply(that);
-        }, 1000);
+        }, 1000);*/
     },
     updateTimeLeft:function(){
         var now = new Date(),
@@ -244,6 +245,8 @@ App.timerController = Em.Object.create({
         this.set('timeLeft', this.formatTime(this.get('totalTime') - diff));
         var rotationDegrees = 360-(360*((this.get('totalTime')- diff)/this.get('totalTime')));
         $('.timer-hand').css('-webkit-transform', 'rotate('+rotationDegrees+'deg)');
+        $('.timer-hand').css('-moz-transform', 'rotate('+rotationDegrees+'deg)');
+        $('.timer-hand').css('-ms-transform', 'rotate('+rotationDegrees+'deg)');
         $('.start-timer-image').css('opacity',(this.get('totalTime')- diff)/this.get('totalTime'));
         $('.time-up-image').css('opacity',1-(this.get('totalTime')- diff)/this.get('totalTime'));
     },

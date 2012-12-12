@@ -28,7 +28,7 @@
 	text-align: center;
 }
 
-button.rounded, input.rounded {
+button.rounded, input[type="text"] {
 	border: 1px solid #ccc;
   	-moz-border-radius: 20px;
   	-webkit-border-radius: 20px;
@@ -37,7 +37,7 @@ button.rounded, input.rounded {
 }
 
 
-.text-box-container input {
+.text-box-container input, input[type="text"] {
 	background-color: rgba(255, 255, 255, .15);
 	border: 2px;
 	padding-left: 1em;
@@ -170,6 +170,9 @@ button.button-no-background:hover {
 	border-radius: 50px;
 	background-color: white;
 	-webkit-transform-origin: 50% 95%;
+	-moz-transform-origin: 50% 95%;
+	-ms-transform-origin: 50% 95%;
+	-transform-origin: 50% 95%;
 }
 
 .static-timer {
@@ -196,3 +199,7 @@ button.button-no-background:hover {
 	float: left;
 }
 
+.question-container input[type="text"] {
+	font-size: 1em;
+	margin-top: 2em;
+}
