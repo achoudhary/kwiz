@@ -63,22 +63,36 @@ p.lead {
 
 
 .question-header-panel {
-	height: 30%;
+	height: 25%;
 	background-color: rgba(0, 0, 0, 0.3);
 	padding-top: 1em;
 	color: #00DEFF;
 }
 
+img.start-timer-image {
+	margin-left: -110px;	
+}
+
+.timer-container { 
+	position: relative; 
+}
+
+img.time-up-image {
+	z-index:100;
+	opacity: 0;	
+}
+
 .questions .header {
-	margin-top: 6em;
-	height: 10%;
+	margin-top: 0em;
+	height: 15%;
 }
 
 .question-container {
-	height: 70%;
+	height: 65%;
 	color: #DDD;
 	font-weight: bolder;
 	font-size: 1.5em;
+	margin-top: 3em;
 }
 
 .options {
@@ -99,10 +113,8 @@ p.lead {
 }
 
 .radio-option .option-container:hover {
-	background: rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.35);
 }
-
-
 
 button.next {
 	padding: 0.5em 4em;
@@ -132,7 +144,8 @@ button.button-no-background:hover {
 	visibility: hidden;
 	float: left;
 	width: 2em;
-	height: 1.5em;
+	height: 2em;
+	margin-top: -0.33em;
 }
 
 .selected {
@@ -148,6 +161,38 @@ button.button-no-background:hover {
 	height: 1.5em;
 }
 
+.timer-hand {
+	margin-left: -60px;
+	width: 6px;
+	height: 41px;
+	margin-bottom: -6px;
+	display: inline-block;
+	border-radius: 50px;
+	background-color: white;
+	-webkit-transform-origin: 50% 95%;
+}
+
+.static-timer {
+	margin-left: -60px;
+	z-index: 500;
+}
+
 .selected .option-image {
 	visibility: visible;
 }
+
+.header-left {
+	width: 25%;
+	float: left;
+}
+
+.header-center {
+	width: 50%;
+	float: left;
+}
+
+.header-right.weightage {
+	width: 25%;
+	float: left;
+}
+

@@ -14,18 +14,21 @@
 				<div class="container questions">
 					<div class='header'>
 						<div class="timer-container">
-							<img src="../images/timer_times-up_A.png" />
+							<img class="time-up-image" src="../images/timer_times-up_B.png" />
+							<img class="start-timer-image" src="../images/timer_times-up_A.png" />
+							<div class="timer-hand"></div>
+							<img class="static-timer" src="../images/timer_start.png" />
 						</div>
 						<div class="question-header-panel row">
-							<div class="span3">
+							<div class="header-left">
 								<div class="pull-right">	
 									Question {{App.quizController.currentIndex}}/{{App.quizController.getTotalQuestionsLength}}			
 								</div>
 							</div>
-							<div class="span9 timer">
+							<div class="timer header-center">
                                 <div class="hand">{{App.timerController.timeLeft}}</div>
 							</div>
-							<div class="span3 weightage">
+							<div class="weightage header-right">
 								<div class="pull-left">
 									Weightage {{App.quizController.currentQuestion.weight}}
 								</div>
@@ -74,10 +77,8 @@
 					<p class="lead">
 						Enter Your Name
 					</p>
-					<div class="text-box-container">
-	                    
-	                       {{view App.SearchTextField placeholder="Item to do" valueBinding="App.quizController.username"}}
-	                    
+					<div class="text-box-container">	                    
+	                {{view App.SearchTextField placeholder="Item to do" valueBinding="App.quizController.username"}}                    
 					</div>
 				</div>
 				<div class="button-container">
