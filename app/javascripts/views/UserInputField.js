@@ -1,13 +1,6 @@
-/**
- * Created with IntelliJ IDEA.
- * User: varunp
- * Date: 11/12/12
- * Time: 10:11 AM
- * To change this template use File | Settings | File Templates.
- */
-kwiz.UserInputField = Em.TextField.extend({
-    insertNewLine: function(){
-        console.log(this);
-        //kwiz.controller.startQuiz();
+App.SearchTextField = Em.TextField.extend({
+    insertNewline:function(){
+        console.log('hello', this);
+        App.quizController.startQuiz();
     }
 });

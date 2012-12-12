@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5791943e-354f-4373-b810-4368f199f507" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascripts/_vendor/log4js.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascripts/controllers/quizController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascripts/controllers/timerController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascripts/views/RadiobuttonView.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascripts/views/TextInputView.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/init.js" afterPath="$PROJECT_DIR$/app/javascripts/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/models/FillinQuestionModel.js" afterPath="$PROJECT_DIR$/app/javascripts/models/FillinQuestionModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/models/ImageFillinQuestionModel.js" afterPath="$PROJECT_DIR$/app/javascripts/models/ImageFillinQuestionModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/models/QuestionModel.js" afterPath="$PROJECT_DIR$/app/javascripts/models/QuestionModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/models/RadioQuestionModel.js" afterPath="$PROJECT_DIR$/app/javascripts/models/RadioQuestionModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/models/UserModel.js" afterPath="$PROJECT_DIR$/app/javascripts/models/UserModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/views/UserInputField.js" afterPath="$PROJECT_DIR$/app/javascripts/views/UserInputField.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.html" afterPath="$PROJECT_DIR$/app/views/index.html" />
     </list>
     <ignored path="kwiz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,16 +76,25 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="53" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.79949236">
+            <state line="49" column="20" selection-start="2241" selection-end="2241" vertical-scroll-proportion="1.8654822">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascripts/i18n/messages.js">
+      <file leaf-file-name="timerController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/timerController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="39" column="3" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quizController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/quizController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="3" selection-start="2656" selection-end="2656" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -97,19 +118,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextInputView.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascripts/views/TextInputView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="34" selection-start="181" selection-end="190" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserInputField.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascripts/views/UserInputField.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="43" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
+            <state line="4" column="5" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -118,8 +130,42 @@
       <file leaf-file-name="init.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascripts/init.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="200" column="0" selection-start="5612" selection-end="5612" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1355316707000" expanded="true" signature="409:466" placeholder="/** Models ...*/" />
+                <marker date="1355316707000" expanded="true" signature="490:645" placeholder="{&quot;question&quot;: null...}" />
+                <marker date="1355316707000" expanded="true" signature="707:731" placeholder="{&quot;isFillin&quot;: true...}" />
+                <marker date="1355316707000" expanded="true" signature="787:915" placeholder="{&quot;imageURL&quot;: null...}" />
+                <marker date="1355316707000" expanded="true" signature="989:995" placeholder="{&quot;options&quot;: null...}" />
+                <marker date="1355316707000" expanded="true" signature="1026:1179" placeholder="/** Views ...*/" />
+                <marker date="1355316707000" expanded="true" signature="1213:1274" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1220:1253" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1322:1734" placeholder="{&quot;title&quot;: null...}" />
+                <marker date="1355316707000" expanded="true" signature="1495:1684" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1544:1560" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1744:1789" placeholder="/** Controller ...*/" />
+                <marker date="1355316707000" expanded="true" signature="1979:2024" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="2048:2260" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="2218:2256" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="2336:2528" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="200:1041" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="396:595" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="428:504" placeholder="{&quot;type&quot;: 'radio'...}" />
+                <marker date="1355316707000" expanded="true" signature="630:950" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="710:927" placeholder="{&quot;type&quot;: 'fillin'...}" />
+                <marker date="1355316707000" expanded="true" signature="977:1035" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1198:1556" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1311:1425" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1346:1410" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1783:2844" placeholder="{&quot;timeLeft&quot;: &quot;:20&quot;...}" />
+                <marker date="1355316707000" expanded="true" signature="1834:1903" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1945:2034" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="1983:2041" placeholder="/*...*/" />
+                <marker date="1355316707000" expanded="true" signature="2064:2595" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="2286:2309" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="2624:2844" placeholder="{...}" />
+                <marker date="1355316707000" expanded="true" signature="2785:2801" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +173,7 @@
       <file leaf-file-name="UserModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascripts/models/UserModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="4" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
+            <state line="1" column="4" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,7 +182,7 @@
       <file leaf-file-name="FillinQuestionModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascripts/models/FillinQuestionModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="54" selection-start="48" selection-end="54" vertical-scroll-proportion="0.0">
+            <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -175,6 +221,8 @@
         <option value="$PROJECT_DIR$/app/javascripts/views/UserInputField.js" />
         <option value="$PROJECT_DIR$/app/javascripts/init.js" />
         <option value="$PROJECT_DIR$/app/views/index.html" />
+        <option value="$PROJECT_DIR$/app/javascripts/controllers/timerController.js" />
+        <option value="$PROJECT_DIR$/app/javascripts/controllers/quizController.js" />
       </list>
     </option>
   </component>
@@ -211,6 +259,19 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -357,19 +418,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="_vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -521,7 +569,11 @@
       <created>1355225052212</created>
       <updated>1355225052212</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit with controllers working">
+      <created>1355316665966</created>
+      <updated>1355316665966</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -539,6 +591,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -548,7 +601,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -633,35 +685,25 @@
         <state line="9" column="1" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascripts/views/TextInputView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="181" selection-end="190" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/javascripts/views/UserInputField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascripts/init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="0" selection-start="5612" selection-end="5612" vertical-scroll-proportion="0.0">
+        <state line="4" column="5" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascripts/models/UserModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="4" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" />
+        <state line="1" column="4" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascripts/models/FillinQuestionModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="54" selection-start="48" selection-end="54" vertical-scroll-proportion="0.0" />
+        <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascripts/models/QuestionModel.js">
@@ -669,9 +711,64 @@
         <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascripts/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1355316707000" expanded="true" signature="409:466" placeholder="/** Models ...*/" />
+            <marker date="1355316707000" expanded="true" signature="490:645" placeholder="{&quot;question&quot;: null...}" />
+            <marker date="1355316707000" expanded="true" signature="707:731" placeholder="{&quot;isFillin&quot;: true...}" />
+            <marker date="1355316707000" expanded="true" signature="787:915" placeholder="{&quot;imageURL&quot;: null...}" />
+            <marker date="1355316707000" expanded="true" signature="989:995" placeholder="{&quot;options&quot;: null...}" />
+            <marker date="1355316707000" expanded="true" signature="1026:1179" placeholder="/** Views ...*/" />
+            <marker date="1355316707000" expanded="true" signature="1213:1274" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1220:1253" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1322:1734" placeholder="{&quot;title&quot;: null...}" />
+            <marker date="1355316707000" expanded="true" signature="1495:1684" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1544:1560" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1744:1789" placeholder="/** Controller ...*/" />
+            <marker date="1355316707000" expanded="true" signature="1979:2024" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="2048:2260" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="2218:2256" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="2336:2528" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="200:1041" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="396:595" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="428:504" placeholder="{&quot;type&quot;: 'radio'...}" />
+            <marker date="1355316707000" expanded="true" signature="630:950" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="710:927" placeholder="{&quot;type&quot;: 'fillin'...}" />
+            <marker date="1355316707000" expanded="true" signature="977:1035" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1198:1556" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1311:1425" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1346:1410" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1783:2844" placeholder="{&quot;timeLeft&quot;: &quot;:20&quot;...}" />
+            <marker date="1355316707000" expanded="true" signature="1834:1903" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1945:2034" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="1983:2041" placeholder="/*...*/" />
+            <marker date="1355316707000" expanded="true" signature="2064:2595" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="2286:2309" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="2624:2844" placeholder="{...}" />
+            <marker date="1355316707000" expanded="true" signature="2785:2801" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/timerController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="3" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/quizController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="3" selection-start="2656" selection-end="2656" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="53" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.79949236">
+        <state line="49" column="20" selection-start="2241" selection-end="2241" vertical-scroll-proportion="1.8654822">
           <folding />
         </state>
       </provider>

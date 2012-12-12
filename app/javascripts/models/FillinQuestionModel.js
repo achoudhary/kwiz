@@ -1,3 +1,3 @@
-kwiz.Model.FillinQuestion = kwiz.Model.Question.extend({
-	hasImage: null
+FillinQuestion = Question.extend({
+	isFillin:true
 });
