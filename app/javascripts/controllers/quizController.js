@@ -1,4 +1,4 @@
-App.quizController = Em.ArrayController.create({
+App.Controller.quizController = Em.ArrayController.create({
 	content: [],
 	username: null,
 	currentIndex:0,
@@ -27,29 +27,25 @@ App.quizController = Em.ArrayController.create({
 		$('button.next').attr('disabled',true);
         var questionModel;
 		if(question.type === "radio") {
-			questionModel = RadioQuestionModel.create({
+			questionModel = App.Model.Question.create({
 				question: question.question,
 				type: 'radio',
-				weight: question.weight,
-				answer: null,
-				userAnswer: null,
+				weightage: question.weight,
 				options: question.answers
 			});
 
 		}else if(question.type === "fillin"){
-            questionModel = ImageFillinQuestion.create({
+            questionModel = App.Model.ImageQuestion.create({
                 question: question.question,
                 type: 'fillin',
-                weight: question.weight,
-                answer: null,
-                userAnswer: null,
+                weightage: question.weight,
                 imageURL: question.imageURL
             });
         }
         if(questionModel){
             this.set('currentQuestion', questionModel);
-            App.timerController.reset();
-            App.timerController.startTimer();
+            App.Controller.timerController.reset();
+            App.Controller.timerController.startTimer();
         }
         }
 	},

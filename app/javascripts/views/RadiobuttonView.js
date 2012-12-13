@@ -1,4 +1,4 @@
-Ember.RadioButton=Ember.View.extend({
+App.Views.Options=Ember.View.extend({
     title:null,
     defaultTemplate: Ember.Handlebars.compile('<div class="option-container"><div class="option-image"><img src="../images/blue-tick.png" /></div><div class="option-text">{{title}}</div></div>'),
     click:function(event){
@@ -8,6 +8,6 @@ Ember.RadioButton=Ember.View.extend({
     	});
     	$(elem).parents('.radio-option').addClass("selected");
     	$('button.next').attr('disabled',false);
-    	App.quizController.currentQuestion.userAnswer=this.get('title');
+    	App.Controller.quizController.currentQuestion.userAnswer=this.get('title');
     }
 });

@@ -1,4 +1,4 @@
-App.timerController = Em.Object.create({
+App.Controller.timerController = Em.Object.create({
 	timeLeft:":20",
     totalTime:20*1000,
 	reset: function() {
@@ -17,7 +17,7 @@ App.timerController = Em.Object.create({
         diff = now - this._startedAt;
         if(diff>=this.get('totalTime')){
             clearInterval(this.em);
-            App.quizController.loadNextQuestion();
+            App.Controller.quizController.loadNextQuestion();
         }
         this.set('timeLeft', this.formatTime(this.get('totalTime') - diff));
         var rotationDegrees = 360-(360*((this.get('totalTime')- diff)/this.get('totalTime')));
