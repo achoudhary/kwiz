@@ -49,7 +49,7 @@ App.Controller.quizController = Em.ArrayController.create({
         }
         }
 	},
-	computeResult: function() {
+    computeResult: function() {
         App.timerController.reset();
         var answered=this.get('content'),
         questions=quiz.questions;
