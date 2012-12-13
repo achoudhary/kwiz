@@ -1,3 +1,4 @@
 FillinQuestion = Question.extend({
-	isFillin:true
+	isFillin:true,
+    type:''
 });

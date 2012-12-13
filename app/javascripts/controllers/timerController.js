@@ -8,9 +8,9 @@ App.timerController = Em.Object.create({
     startTimer:function(){
         this._startedAt = new Date();
         var that=this;
-        /*this.em=setInterval(function() {
+        this.em=setInterval(function() {
          that.updateTimeLeft.apply(that);
-         }, 1000);*/
+         }, 1000);
     },
     updateTimeLeft:function(){
         var now = new Date(),

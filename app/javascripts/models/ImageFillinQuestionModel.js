@@ -1,3 +1,3 @@
-ImageFillinQuestion = FillinQuestion.extend({
+ImageFillinQuestion = Question.extend({
 	imageURL: null
 });
