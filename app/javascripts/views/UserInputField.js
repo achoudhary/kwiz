@@ -1,6 +1,5 @@
-App.SearchTextField = Em.TextField.extend({
+App.Views.SearchTextField = Em.TextField.extend({
     insertNewline:function(){
-        console.log('hello', this);
-        App.quizController.startQuiz();
+        App.Controller.quizController.startQuiz();
     }
 });

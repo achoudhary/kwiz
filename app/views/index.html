@@ -6,9 +6,7 @@
         <script src="http://cloud.github.com/downloads/emberjs/ember.js/ember-0.9.6.min.js"></script>
         <script src="../javascripts/init.js"></script>
         <script src="../javascripts/models/QuestionModel.js"></script>
-        <script src="../javascripts/models/RadioQuestionModel.js"></script>
-        <script src="../javascripts/models/FillinQuestionModel.js"></script>
-        <script src="../javascripts/models/ImageFillinQuestionModel.js"></script>
+        <script src="../javascripts/models/ImageQuestion.js"></script>
         <script src="../javascripts/controllers/quizController.js"></script>
         <script src="../javascripts/controllers/timerController.js"></script>
         <script src="../javascripts/views/RadiobuttonView.js"></script>
@@ -18,7 +16,7 @@
 	</head>
 	<body>	
 		<script type="text/x-handlebars">
-			{{#if App.quizController.currentIndex}}
+			{{#if App.Controller.quizController.currentIndex}}
 				<div class="container questions">
 					<div class='header'>
 						<div class="timer-container">
@@ -30,48 +28,48 @@
 						<div class="question-header-panel row">
 							<div class="header-left">
 								<div class="pull-right">	
-									Question {{App.quizController.currentIndex}}/{{App.quizController.getTotalQuestionsLength}}			
+									Question {{App.Controller.quizController.currentIndex}}/{{App.Controller.quizController.getTotalQuestionsLength}}			
 								</div>
 							</div>
 							<div class="timer header-center">
-                                <div class="hand">{{App.timerController.timeLeft}}</div>
+                                <div class="hand">{{App.Controller.timerController.timeLeft}}</div>
 							</div>
 							<div class="weightage header-right">
 								<div class="pull-left">
-									Weightage {{App.quizController.currentQuestion.weight}}
+									Weightage {{App.Controller.quizController.currentQuestion.weight}}
 								</div>
 							</div>						
 						</div>
 					</div>	
 					<div class="question-container">
 						<div class="question-text">
-							{{App.quizController.currentQuestion.question}}
+							{{App.Controller.quizController.currentQuestion.question}}
 						</div>
-						{{#if App.quizController.currentQuestion.options}}
+						{{#if App.Controller.quizController.currentQuestion.options}}
 							<div class="options">
-								{{#each App.quizController.currentQuestion.options}}
+								{{#each App.Controller.quizController.currentQuestion.options}}
 									<div class="radio-option">
-										{{view Ember.RadioButton title=this}}
+										{{view App.Views.Options title=this}}
 									</div>
 								{{/each}}
 							</div>
 							{{else}}
-								{{#if App.quizController.currentQuestion.imageURL}}
-									<div class="image-container"><img {{bindAttr src="App.quizController.currentQuestion.imageURL"}}/></div>
+								{{#if App.Controller.quizController.currentQuestion.imageURL}}
+									<div class="image-container"><img {{bindAttr src="App.Controller.quizController.currentQuestion.imageURL"}}/></div>
 								{{/if}}
-								{{view Em.TextField valueBinding="App.quizController.currentQuestion.userAnswer" placeholder="Enter your answer"}}
+								{{view Em.TextField valueBinding="App.Controller.quizController.currentQuestion.userAnswer" placeholder="Enter your answer"}}
 						{{/if}}				
 					</div>
 					<div class="btn-controls">
 						<div class="span3 pull-left">
 							<div class="pull-right">
-								<button class="button-no-background" {{action "endQuiz" target="App.quizController"}}>< Quit</button>
+								<button class="button-no-background" {{action "endQuiz" target="App.Controller.quizController"}}>< Quit</button>
 							</div>
 						</div>
-						<button class="btn btn-large rounded next" disabled {{action "loadNextQuestion" target="App.quizController"}}>Next</button>
+						<button class="btn btn-large rounded next" disabled {{action "loadNextQuestion" target="App.Controller.quizController"}}>Next</button>
 						<div class="span3 pull-right">
 							<div class="pull-left">
-								<button class="button-no-background" {{action "loadNextQuestion" target="App.quizController"}}>Pass ></button>
+								<button class="button-no-background" {{action "loadNextQuestion" target="App.Controller.quizController"}}>Pass ></button>
 							</div>
 						</div>
 					</div>
@@ -86,12 +84,12 @@
 						Enter Your Name
 					</p>
 					<div class="text-box-container">	                    
-	                {{view App.SearchTextField placeholder="Please enter your name" valueBinding="App.quizController.username"}}                    
+	                {{view App.Views.SearchTextField placeholder="Item to do" valueBinding="App.Controller.quizController.username"}}                    
 					</div>
 				</div>
 				<div class="button-container">
 					<div class='start-button-container'>
-						<button class="btn btn-large rounded" {{action "startQuiz" target="App.quizController"}}>Start Game</button>						
+						<button class="btn btn-large rounded" {{action "startQuiz" target="App.Controller.quizController"}}>Start Game</button>						
 					</div>
 					<div class="help-button-container">
 						<button class="btn btn-large rounded">Help</button>

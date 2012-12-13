@@ -1,7 +1,6 @@
-Question = Em.Object.extend({
-	question: null,
+App.Model.Question = Em.Object.extend({
+	description: null,
 	type: null,
-	weight: null,
-	userAnswer: null,
-	answer: null
+	weightage: null,
+	options:[]
 });

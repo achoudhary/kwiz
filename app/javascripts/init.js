@@ -95,6 +95,9 @@ var quiz={
 };
 
 App = Em.Application.create();
+App.Model={};
+App.Views={};
+App.Controller={};
 
 /*******************************
  * Controller
