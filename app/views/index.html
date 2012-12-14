@@ -4,18 +4,10 @@
 	<title>Quiz</title>
 	<link rel="stylesheet" href="../stylesheets/bootstrap.css" />
 	<link rel="stylesheet" href="../stylesheets/style.css" />
-	<script type="text/x-handlebars" data-template-name="quiz">
-	<h1>Cars</h1>
-	<p>Here in my car / I feel safest of all</p>
-	</script>
-	<script type="text/x-handlebars" data-template-name="results">
-	<h1>Cars</h1>
-	<p>i am in my results</p>
-	</script>
-	
+
 </head>
-<body>	
-	<div class=" questions">
+<body>
+	<div>
 		<script type="text/x-handlebars" data-template-name="application">
 		{{outlet}}
 		</script>
@@ -23,80 +15,77 @@
 	<script type="text/x-handlebars" data-template-name="login">
 		<div class="container">
 			<div class='header'>
-			<img src="../images/quiz-logo_A.png" alt="quiz">
+			    <img src="../images/quiz-logo_A.png" alt="quiz">
 			</div>
 			<div class="user-info-container">
-			<p class="lead">
-			Enter Your Name
-			</p>
-			<div class="text-box-container">	                    
-			{{view App.Views.SearchTextField placeholder="Item to do" valueBinding="App.Controller.quizController.username"}}                    
-			</div>
+                <p class="lead">
+                Enter Your Name
+                </p>
+                <div class="text-box-container">
+                {{view App.Views.SearchTextField placeholder="Item to do" valueBinding="App.Controller.quizController.username"}}
+                </div>
 			</div>
 			<div class="button-container">
-			<div class='start-button-container'>
-			<button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>Start Game</button>						
-			</div>
-			<div class="help-button-container">
-			<button class="btn btn-large rounded">Help</button>
-			</div>
+			    <div class='start-button-container'>
+			        <button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>Start Game</button>
+			    </div>
+			    <div class="help-button-container">
+			        <button class="btn btn-large rounded">Help</button>
+			    </div>
 			</div>
 		</div>
 	</script>
 	<script type="text/x-handlebars" data-template-name="quiz">
-	<div class="container">
-	<div class='header'>
-						<div class="timer-container">
-							<img class="time-up-image" src="../images/timer_times-up_B.png" />
-							<img class="start-timer-image" src="../images/timer_times-up_A.png" />
-							<div class="timer-hand"></div>
-							<img class="static-timer" src="../images/timer_start.png" />
-						</div>
-						<div class="question-header-panel row">
-							
-							<div class="header-left">
-								<div class="pull-right">	
-									Question {{App.Controller.quizController.currentIndex}}/{{App.Controller.quizController.getTotalQuestionsLength}}			
-								</div>
-							</div>
-							<div class="timer header-center">
-                                <div class="hand">{{App.Controller.timerController.timeLeft}}</div>
-							</div>
-							<div class="weightage header-right">
-								<div class="pull-left">
-									Weightage {{App.Controller.quizController.currentQuestion.weightage}}
-								</div>
-							</div>						
+        <div class="question container">
+        <div class='header'>
+            <div class="timer-container">
+                <img class="time-up-image" src="../images/timer_times-up_B.png" />
+                <img class="start-timer-image" src="../images/timer_times-up_A.png" />
+                <div class="timer-hand"></div>
+                <img class="static-timer" src="../images/timer_start.png" />
+            </div>
+            <div class="question-header-panel row">
+                <div class="header-left">
+                    <div class="pull-right">
+                        Question {{App.Controller.quizController.currentIndex}}/{{App.Controller.quizController.getTotalQuestionsLength}}
+                    </div>
+                </div>
+                <div class="timer header-center">
+                    <div class="hand">{{App.Controller.timerController.timeLeft}}</div>
+                </div>
+                <div class="weightage header-right">
+                    <div class="pull-left">
+                        Weightage {{App.Controller.quizController.currentQuestion.weightage}}
+                    </div>
+                </div>
 
-						</div>
-					</div>	
-<div class="question-container">
-<div class='question-text'>{{App.Controller.quizController.currentQuestion.description}}</div>
-<div class="options">
+            </div>
+        </div>
+        <div class="question-container">
+            <div class='question-text'>{{App.Controller.quizController.currentQuestion.description}}</div>
+            <div class="options">
 
-</div>
-{{#if App.Controller.quizController.currentQuestion.imageURL}}
-<img {{bindAttr src="App.Controller.quizController.currentQuestion.imageURL"}}/>
-<div class="answerfield">
-	{{view App.Views.AnswerField placeholder="Enter your answer here"}}
-</div>
-{{/if}}
-</div>
-<div class="btn-controls">
-
-						<div class="span3 pull-left">
-							<div class="pull-right">
-								<button class="button-no-background" {{action "endQuiz" target="App.Controller.quizController"}}>< Quit</button>
-							</div>
-						</div>
-						<button class="btn btn-large rounded next" disabled {{action "loadNextQuestion" target="App.Controller.quizController"}}>Next</button>
-						<div class="span3 pull-right">
-							<div class="pull-left">
-								<button class="button-no-background" {{action "loadNextQuestion" target="App.Controller.quizController"}}>Pass ></button>
-							</div>
-						</div>
-
-</div>
+            </div>
+            {{#if App.Controller.quizController.currentQuestion.imageURL}}
+                <img {{bindAttr src="App.Controller.quizController.currentQuestion.imageURL"}}/>
+                <div class="answerfield">
+                    {{view App.Views.AnswerField placeholder="Enter your answer here"}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="btn-controls">
+            <div class="span3 pull-left">
+                <div class="pull-right">
+                    <button class="button-no-background" {{action "endQuiz" target="App.Controller.quizController"}}>< Quit</button>
+                </div>
+            </div>
+            <button class="btn btn-large rounded next" disabled {{action "loadNextQuestion" target="App.Controller.quizController"}}>Next</button>
+            <div class="span3 pull-right">
+                <div class="pull-left">
+                    <button class="button-no-background" {{action "loadNextQuestion" target="App.Controller.quizController"}}>Pass ></button>
+                </div>
+            </div>
+        </div>
 </div>
 	</script>
 	<script type="text/javascript" src="../javascripts/_vendor/jquery-1.7.2.min.js"></script>
