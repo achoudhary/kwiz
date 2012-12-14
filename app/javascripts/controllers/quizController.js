@@ -1,70 +1,93 @@
 App.Controller.quizController = Em.ArrayController.create({
-	content: [],
-	username: null,
-	currentIndex:0,
-	questionsAttempted:0,
-	currentQuestion: null,
-	startQuiz: function() {
-	    this.set('currentIndex', 0);
-	    this.loadNextQuestion();
-	},
-	endQuiz:function(){
-        var prompt=confirm('Do you want to end the exam?');
-	   if(prompt){
-        this.computeResult();
+    content: [],
+    username: null,
+    currentIndex: 0,
+    questionsAttempted: 0,
+    currentQuestion: null,
+    init: function() {
+        var that = this;
+        quiz.questions.forEach(function(value) {
+            if (value.type == 'fillin') {
+                that.pushObject(App.Model.ImageQuestion.create({
+                    description: value.question,
+                    type: value.type,
+                    weightage: value.weight,
+                    options: null,
+                    imageURL: value.imageURL
+                }));
+            } else {
+                that.pushObject(App.Model.Question.create({
+                    description: value.question,
+                    type: value.type,
+                    weightage: value.weight,
+                    options: value.answers
+                }));
+            }
+        });
+    },
+    optionSelected: function(value) {
+        this.get('content')[this.get('currentIndex') - 1].userAnswer = value;
+        $('button.next').attr('disabled', false);
+    },
+    isAnswered: function() {
+        return true;
+    }.property(),
+    startQuiz: function() {
+        if (this.get('username') && this.get('username').length > 4) {
+            App.get('router').transitionTo('root.quiz');
+            this.set('currentIndex', 0);
+            this.loadNextQuestion();
+        } else {
+            alert('Please Enter your name.(Min 4 chars)');
         }
-	},
-	loadNextQuestion: function() {
-        if(this.get('currentIndex')){
-            this.pushObject(this.get('currentQuestion'));
-        }
-        if(this.get('content').length==quiz.questions.length){
+    },
+    endQuiz: function() {
+        var prompt = confirm('Do you want to end the exam?');
+        if (prompt) {
             this.computeResult();
-        }else{
-		var index = this.get('currentIndex');
-		this.set('currentIndex', index+1);
-		var question = quiz.questions[index];
-		$('button.next').attr('disabled',true);
-        var questionModel;
-		if(question.type === "radio") {
-			questionModel = App.Model.Question.create({
-				question: question.question,
-				type: 'radio',
-				weightage: question.weight,
-				options: question.answers
-			});
-
-		}else if(question.type === "fillin"){
-            questionModel = App.Model.ImageQuestion.create({
-                question: question.question,
-                type: 'fillin',
-                weightage: question.weight,
-                imageURL: question.imageURL
-            });
         }
-        if(questionModel){
-            this.set('currentQuestion', questionModel);
-            App.Controller.timerController.reset();
+    },
+    loadNextQuestion: function() {
+        var that = this;
+        $('button.next').attr('disabled', true);
+        if (this.get('content').length == this.get('currentIndex')) {
+            this.computeResult();
+        } else {
             App.Controller.timerController.startTimer();
+            var index = this.get('currentIndex'),
+                question = this.get('content')[index];
+            this.set('currentIndex', index + 1);
+            this.set('currentQuestion', question);
+            $(".options").empty();
+            if (question.type == 'radio') {
+                question.options.forEach(function(data) {
+                    App.Views.Options.create({
+                        title: data
+                    }).appendTo('.options');
+
+                })
+            }
+
         }
-        }
-	},
+
+    },
     computeResult: function() {
-        App.timerController.reset();
-        var answered=this.get('content'),
-        questions=quiz.questions;
-        var i=0,score=0;
-        for(i=0;i<answered.length;i++){
-            if(answered[i].userAnswer==questions[i].correctAnswer){
-                score+=answered[i].weight;
+        App.Controller.timerController.reset();
+        var answered = this.get('content'),
+            questions = quiz.questions,
+            i = 0,
+            score = 0;
+        for (i = 0; i < answered.length; i++) {
+            if (answered[i].userAnswer == questions[i].correctAnswer) {
+                score += answered[i].weightage;
             }
         }
         //Loop through content to get the result
-		$('div.questions').empty();
+        $('div.questions').empty();
         //Change styling accordingly
-        $('div.questions').html("<div class='container' style='color:white'>Thanks for Taking the quiz: You scored "+score+"</div>");
-	},
-	getTotalQuestionsLength: function() {
-		return quiz.questions.length;
-	}.property()
+        $('div.questions').html("<div class='container' style='color:white'>Thanks for Taking the quiz: You scored " + score + "</div>");
+    },
+    getTotalQuestionsLength: function() {
+        return this.get('content').length;
+    }.property()
 });
