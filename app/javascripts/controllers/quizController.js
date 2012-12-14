@@ -30,13 +30,11 @@ App.Controller.quizController = Em.ArrayController.create({
         $('button.next').attr('disabled', false);
     },
     startQuiz: function() {
-        if (this.get('username') && this.get('username').length > 4) {
+        
             App.get('router').transitionTo('root.quiz');
             this.set('currentIndex', 0);
             this.loadNextQuestion();
-        } else {
-            alert('Please Enter your name.(Min 4 chars)');
-        }
+        
     },
     endQuiz: function() {
         var prompt = confirm('Do you want to end the exam?');
