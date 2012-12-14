@@ -22,6 +22,8 @@ App.Controller.timerController = Em.Object.create({
         this.set('timeLeft', this.formatTime(this.get('totalTime') - diff));
         var rotationDegrees = 360-(360*((this.get('totalTime')- diff)/this.get('totalTime')));
         $('.timer-hand').css('-webkit-transform', 'rotate('+rotationDegrees+'deg)');
+        $('.timer-hand').css('-moz-transform', 'rotate('+rotationDegrees+'deg)');
+        $('.timer-hand').css('-ms-transform', 'rotate('+rotationDegrees+'deg)');
         $('.start-timer-image').css('opacity',(this.get('totalTime')- diff)/this.get('totalTime'));
         $('.time-up-image').css('opacity',1-(this.get('totalTime')- diff)/this.get('totalTime'));
     },

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5791943e-354f-4373-b810-4368f199f507" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-    </list>
-    <list id="53b203e2-eedf-405b-9506-72c69a521c78" name="Failed commit: Default" comment="Merge branch 'master' of https://github.com/achoudhary/kwiz&#10;&#10;Conflicts:&#10;&#9;app/views/index.html&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/controllers/quizController.js" afterPath="$PROJECT_DIR$/app/javascripts/controllers/quizController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascripts/controllers/timerController.js" afterPath="$PROJECT_DIR$/app/javascripts/controllers/timerController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.html" afterPath="$PROJECT_DIR$/app/views/index.html" />
     </list>
     <ignored path="kwiz.iws" />
@@ -94,7 +92,7 @@
       <file leaf-file-name="timerController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/timerController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="32" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
+            <state line="25" column="33" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -109,10 +107,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-0.5833333">
+            <state line="23" column="62" selection-start="709" selection-end="709" vertical-scroll-proportion="0.8756345">
               <folding />
             </state>
           </provider>
@@ -121,7 +119,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="14" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0">
+            <state line="111" column="14" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,11 +134,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quizController.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="quizController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/quizController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="0" selection-start="2423" selection-end="2423" vertical-scroll-proportion="2.5058005">
-              <folding />
+            <state line="70" column="0" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1355482103000" expanded="true" signature="1154:1195" placeholder="{...}" />
+                <marker date="1355482103000" expanded="true" signature="1201:1273" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -186,8 +187,8 @@
         <option value="$PROJECT_DIR$/app/javascripts/models/QuestionModel.js" />
         <option value="$PROJECT_DIR$/app/javascripts/models/FillinQuestionModel.js" />
         <option value="$PROJECT_DIR$/app/javascripts/models/ImageFillinQuestionModel.js" />
-        <option value="$PROJECT_DIR$/app/javascripts/controllers/timerController.js" />
         <option value="$PROJECT_DIR$/app/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/app/javascripts/controllers/timerController.js" />
         <option value="$PROJECT_DIR$/app/views/index.html" />
       </list>
     </option>
@@ -585,7 +586,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5791943e-354f-4373-b810-4368f199f507" name="Default" comment="" />
-      <changelist id="53b203e2-eedf-405b-9506-72c69a521c78" name="Failed commit: Default" comment="Merge branch 'master' of https://github.com/achoudhary/kwiz&#10;&#10;Conflicts:&#10;&#9;app/views/index.html&#10;" />
       <created>1353495167184</created>
       <updated>1353495167184</updated>
     </task>
@@ -609,7 +609,23 @@
       <created>1355480220506</created>
       <updated>1355480220506</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'master' of https://github.com/achoudhary/kwiz&#10;&#10;Conflicts:&#10;&#9;app/views/index.html&#10;">
+      <created>1355480315503</created>
+      <updated>1355480315503</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge branch 'master' of https://github.com/achoudhary/kwiz&#10;&#10;Conflicts:&#10;&#9;app/views/index.html&#10;">
+      <created>1355480519710</created>
+      <updated>1355480519710</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Merge branch 'master' of https://github.com/achoudhary/kwiz&#10;&#10;Conflicts:&#10;&#9;app/views/index.html&#10;">
+      <created>1355480657495</created>
+      <updated>1355480657495</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Merge branch 'master' of https://github.com/achoudhary/kwiz&#10;&#10;Conflicts:&#10;&#9;app/views/index.html&#10;">
+      <created>1355482090899</created>
+      <updated>1355482090899</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -730,21 +746,11 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/timerController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="32" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/javascripts/views/UserInputField.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="3" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascripts/init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascripts/views/RadiobuttonView.js">
@@ -763,21 +769,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="14" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-0.5833333">
+        <state line="111" column="14" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/quizController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2423" selection-end="2423" vertical-scroll-proportion="2.5058005">
+        <state line="70" column="0" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1355482103000" expanded="true" signature="1154:1195" placeholder="{...}" />
+            <marker date="1355482103000" expanded="true" signature="1201:1273" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascripts/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascripts/controllers/timerController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="33" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="62" selection-start="709" selection-end="709" vertical-scroll-proportion="0.8756345">
           <folding />
         </state>
       </provider>
