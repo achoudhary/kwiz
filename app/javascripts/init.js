@@ -93,6 +93,7 @@ App = Em.Application.create({
     }),
     Router: Ember.Router.extend({
         enableLogging: true,
+        goTo: Ember.Route.transitionTo('login'),
         root: Ember.Route.extend({
             index: Ember.Route.extend({
                 route: '/',

@@ -36,6 +36,9 @@ App.Controller.quizController = Em.ArrayController.create({
             this.loadNextQuestion();
         
     },
+    newQuiz:function(){
+        App.get('router').transitionTo('root.index');
+    },
     endQuiz: function() {
         var prompt = confirm('Do you want to end the exam?');
         if (prompt) {
