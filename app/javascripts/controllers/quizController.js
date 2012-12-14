@@ -29,9 +29,6 @@ App.Controller.quizController = Em.ArrayController.create({
         this.get('content')[this.get('currentIndex') - 1].userAnswer = value;
         $('button.next').attr('disabled', false);
     },
-    isAnswered: function() {
-        return true;
-    }.property(),
     startQuiz: function() {
         if (this.get('username') && this.get('username').length > 4) {
             App.get('router').transitionTo('root.quiz');
@@ -72,6 +69,7 @@ App.Controller.quizController = Em.ArrayController.create({
 
     },
     computeResult: function() {
+
         App.Controller.timerController.reset();
         var answered = this.get('content'),
             questions = quiz.questions,
@@ -82,10 +80,14 @@ App.Controller.quizController = Em.ArrayController.create({
                 score += answered[i].weightage;
             }
         }
-        //Loop through content to get the result
-        $('div.questions').empty();
-        //Change styling accordingly
-        $('div.questions').html("<div class='container' style='color:white'>Thanks for Taking the quiz: You scored " + score + "</div>");
+        var that=this;
+        App.Model.UserDetails=Em.Object.create({
+            userName:that.get('username'),
+            userScore:score
+        });
+        
+        App.get('router').transitionTo('results');
+        
     },
     getTotalQuestionsLength: function() {
         return this.get('content').length;
