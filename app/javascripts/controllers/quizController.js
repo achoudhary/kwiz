@@ -5,9 +5,12 @@ App.Controller.quizController = Em.ArrayController.create({
     questionsAttempted: 0,
     currentQuestion: null,
     init: function() {
-        var that = this;
-        quiz.questions.forEach(function(value) {
-            if (value.type == 'fillin') {
+        var that = this,
+        i=0
+        value=0;
+        for(i=quiz.questions.length-1;i>=0;i--){
+            value=quiz.questions[i];
+             if (value.type == 'fillin') {
                 that.pushObject(App.Model.ImageQuestion.create({
                     description: value.question,
                     type: value.type,
@@ -23,7 +26,7 @@ App.Controller.quizController = Em.ArrayController.create({
                     options: value.answers
                 }));
             }
-        });
+        }
     },
     optionSelected: function(value) {
         this.get('content')[this.get('currentIndex') - 1].userAnswer = value;
@@ -35,6 +38,9 @@ App.Controller.quizController = Em.ArrayController.create({
             this.set('currentIndex', 0);
             this.loadNextQuestion();
         
+    },
+    newQuiz:function(){
+        App.get('router').transitionTo('root.index');
     },
     endQuiz: function() {
         var prompt = confirm('Do you want to end the exam?');

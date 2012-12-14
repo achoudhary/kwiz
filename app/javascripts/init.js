@@ -1,6 +1,12 @@
 var quiz = {
     title: "IQ Tester",
-    questions: [{
+    questions: [ {
+        question: "Who is the famous personality?",
+        imageURL: "http://ia.media-imdb.com/images/M/MV5BMTIwMzAwMzg1MV5BMl5BanBnXkFtZTYwMjc4ODQ2._V1._SX214_CR0,0,214,314_.jpg",
+        weight: 8,
+        type: "fillin",
+        correctAnswer: "xyz"
+    },{
         question: "Two ducks and two dogs have a total of fourteen legs.",
         answers: ["true", "false"],
         weight: 2,
@@ -59,12 +65,6 @@ var quiz = {
         weight: 6,
         type: "radio",
         correctAnswer: 5
-    }, {
-        question: "Who is the famous personality?",
-        imageURL: "http://ia.media-imdb.com/images/M/MV5BMTIwMzAwMzg1MV5BMl5BanBnXkFtZTYwMjc4ODQ2._V1._SX214_CR0,0,214,314_.jpg",
-        weight: 8,
-        type: "fillin",
-        correctAnswer: "xyz"
     }],
     time: 120,
     //If null, its not a timer base quiz. Value will be in seconds
@@ -93,6 +93,7 @@ App = Em.Application.create({
     }),
     Router: Ember.Router.extend({
         enableLogging: true,
+        goTo: Ember.Route.transitionTo('login'),
         root: Ember.Route.extend({
             index: Ember.Route.extend({
                 route: '/',
