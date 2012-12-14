@@ -92,8 +92,19 @@
             <div class='header'>
                 <img src="../images/quiz-logo_A.png" alt="quiz">
             </div>
-            <div class="result-container">
-                Your score is {{App.Model.UserDetails.userScore}}
+            <div class="user-info-container">
+                <div class="score-container">
+               		<p class="result-message">
+               			Congratulations!
+               	  </p>
+               	  <p class="score-display-text">
+               	  		Your score is 
+               	 </p>
+               	 <p class="score-text">
+               	 	{{App.Model.UserDetails.userScore}}
+               	 </p>
+               </div>
+                
             </div>
             <div class="button-container">
 			    <div class='start-button-container'>
