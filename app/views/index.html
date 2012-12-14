@@ -21,7 +21,7 @@
                 Enter Your Name
                 </p>
                 <div class="text-box-container">
-                {{view App.Views.SearchTextField placeholder="Item to do" valueBinding="App.Controller.quizController.username"}}
+                {{view App.Views.SearchTextField placeholder="Enter your name" valueBinding="App.Controller.quizController.username"}}
                 </div>
 			</div>
 			<div class="button-container">
@@ -97,10 +97,10 @@
             </div>
             <div class="button-container">
 			    <div class='start-button-container'>
-			        <button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>Start Game</button>
+			        <button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>Play Again</button>
 			    </div>
 			    <div class="help-button-container">
-			        <button class="btn btn-large rounded">Help</button>
+			        <button class="btn btn-large rounded">New Game</button>
 			    </div>
 			</div>
 		</div>
