@@ -88,10 +88,23 @@
 </div>
 	</script>
 	<script type="text/x-handlebars" data-template-name="results">
-		<div class='header'>
-			<img src="../images/quiz-logo_A.png" alt="quiz">
+		<div class="container">
+            <div class='header'>
+                <img src="../images/quiz-logo_A.png" alt="quiz">
+            </div>
+            <div class="result-container">
+                Your score is {{App.Model.UserDetails.userScore}}
+            </div>
+            <div class="button-container">
+			    <div class='start-button-container'>
+			        <button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>Start Game</button>
+			    </div>
+			    <div class="help-button-container">
+			        <button class="btn btn-large rounded">Help</button>
+			    </div>
 			</div>
-			<div>Your score is {{App.Model.UserDetails.userScore}}</div>
+		</div>
+
 	</script>
 	<script type="text/javascript" src="../javascripts/_vendor/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="../javascripts/_vendor/handlebars-1.0.0.beta.6.js"></script>
