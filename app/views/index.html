@@ -4,7 +4,6 @@
 	<title>Quiz</title>
 	<link rel="stylesheet" href="../stylesheets/bootstrap.css" />
 	<link rel="stylesheet" href="../stylesheets/style.css" />
-
 </head>
 <body>
 	<div>
@@ -87,6 +86,12 @@
             </div>
         </div>
 </div>
+	</script>
+	<script type="text/x-handlebars" data-template-name="results">
+		<div class='header'>
+			<img src="../images/quiz-logo_A.png" alt="quiz">
+			</div>
+			<div>Your score is {{App.Model.UserDetails.userScore}}</div>
 	</script>
 	<script type="text/javascript" src="../javascripts/_vendor/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="../javascripts/_vendor/handlebars-1.0.0.beta.6.js"></script>
