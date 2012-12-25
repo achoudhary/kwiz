@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Test Add Function</title>
+
+    <script type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
+    <script type="text/javascript" src="../../app/javascripts/_vendor/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../app/javascripts/_vendor/handlebars-1.0.0.beta.6.js"></script>
+    <script type="text/javascript" src="../../app/javascripts/_vendor/ember-1.0.0-pre.2.min.js"></script>
+    <script type="text/javascript" src="../../app/javascripts/_vendor/ember-i18n-latest.js"></script>
+    <script type="text/javascript" src="../../app/javascripts/i18n/messages.js"></script>
+    <script src="../../app/javascripts/init.js"></script>
+    <script src="../../app/javascripts/models/QuestionModel.js"></script>
+    <script src="../../app/javascripts/models/ImageQuestion.js"></script>
+    <script src="../../app/javascripts/views/RadiobuttonView.js"></script>
+    <script src="../../app/javascripts/views/UserInputField.js"></script>
+    <script src="../../app/javascripts/controllers/timerController.js"></script>
+    <script src="../../app/javascripts/controllers/quizController.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    function setUp() {
+        // fixture setup before running a testcase
+    }
+
+    function tearDown() {
+        // anything to cleanup after running a testcase
+    }
+
+    function testTimeLowerBounds() {
+        assertEquals("Running test on timer", App.Controller.timerController.formatTime(12123), "00:12");
+        assertNotEquals("Running test on timer", App.Controller.timerController.formatTime(12123), "00:13");
+    }
+
+    function testTimeUpperBounds() {
+        assertEquals("Running test on timer", App.Controller.timerController.formatTime(12999), "00:13");
+        assertNotEquals("Running test on timer", App.Controller.timerController.formatTime(12999), "00:12");
+    }
+
+    function testCornerCase() {
+        assertEquals("Running test on timer", App.Controller.timerController.formatTime(12500), "00:13");
+        assertNotEquals("Running test on timer", App.Controller.timerController.formatTime(12500), "00:12");
+    }
+</script>
+</body>
+</html>
