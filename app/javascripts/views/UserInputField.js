@@ -15,7 +15,7 @@ App.Views.AnswerField = Em.TextField.extend({
     insertNewline: function() {
         App.Controller.quizController.loadNextQuestion();
     },
-    placeholder: "Enter your answer here",
+    placeholder: "{{t message.enter.answer}}",
     keyUp: function(evt) {
         $('button.next').attr('disabled',false);
         App.Controller.quizController.optionSelected(this.value);

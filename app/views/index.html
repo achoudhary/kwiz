@@ -18,18 +18,18 @@
 			</div>
 			<div class="user-info-container">
                 <p class="lead">
-                Enter Your Name
+                {{t message.enter.name }}
                 </p>
                 <div class="text-box-container">
-                {{view App.Views.SearchTextField placeholder="" valueBinding="App.Controller.quizController.username"}}
+                {{view App.Views.SearchTextField placeholder="Enter your name" valueBinding="App.Controller.quizController.username"}}
                 </div>
 			</div>
 			<div class="button-container">
 			    <div class='start-button-container'>
-			        <button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>Start Game</button>
+			        <button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>{{t message.button.start.game}}</button>
 			    </div>
 			    <div class="help-button-container">
-			        <button class="btn btn-large rounded">Help</button>
+			        <button class="btn btn-large rounded">{{t message.button.help}}</button>
 			    </div>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
             <div class="question-header-panel row">
                 <div class="header-left">
                     <div class="pull-right">
-                        Question {{App.Controller.quizController.currentIndex}}/{{App.Controller.quizController.getTotalQuestionsLength}}
+                        {{t message.question}} {{App.Controller.quizController.currentIndex}}/{{App.Controller.quizController.getTotalQuestionsLength}}
                     </div>
                 </div>
                 <div class="timer header-center">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="weightage header-right">
                     <div class="pull-left">
-                        Weightage {{App.Controller.quizController.currentQuestion.weightage}}
+                        {{t message.weightage}} {{App.Controller.quizController.currentQuestion.weightage}}
                     </div>
                 </div>
 
@@ -75,13 +75,13 @@
         <div class="btn-controls">
             <div class="span3 pull-left">
                 <div class="pull-right">
-                    <button class="button-no-background" {{action "endQuiz" target="App.Controller.quizController"}}>< Quit</button>
+                    <button class="button-no-background" {{action "endQuiz" target="App.Controller.quizController"}}>< {{t message.button.quit}}</button>
                 </div>
             </div>
-            <button class="btn btn-large rounded next" disabled {{action "loadNextQuestion" target="App.Controller.quizController"}}>Next</button>
+            <button class="btn btn-large rounded next" disabled {{action "loadNextQuestion" target="App.Controller.quizController"}}>{{t message.button.next}}</button>
             <div class="span3 pull-right">
                 <div class="pull-left">
-                    <button class="button-no-background" {{action "loadNextQuestion" target="App.Controller.quizController"}}>Pass ></button>
+                    <button class="button-no-background" {{action "loadNextQuestion" target="App.Controller.quizController"}}>{{t message.button.pass}} ></button>
                 </div>
             </div>
         </div>
@@ -95,23 +95,23 @@
             <div class="user-info-container">
                 <div class="score-container">
                		<p class="result-message">
-               			Congratulations!
+               			{{t message.congratulations }}
                	  </p>
                	  <p class="score-display-text">
-               	  		Your score is
+               	  		{{t message.score}}
                	 </p>
                	 <p class="score-text">
                	 	{{App.Model.UserDetails.userScore}}
                	 </p>
                </div>
-
+                
             </div>
             <div class="button-container">
 			    <div class='start-button-container'>
-			        <button class="btn btn-large rounded start"  {{action "startQuiz" target="App.Controller.quizController"}}>Start Game</button>
+			        <button class="btn btn-large rounded start"  {{action "startQuiz" target="App.Controller.quizController"}}>{{t message.button.start.game}}</button>
 			    </div>
 			    <div class="help-button-container">
-			        <button class="btn btn-large rounded" {{action "newQuiz" target="App.Controller.quizController"}}>New Game</button>
+			        <button class="btn btn-large rounded" {{action "newQuiz" target="App.Controller.quizController"}}>{{t message.button.new.game}}</button>
 			    </div>
 			</div>
 		</div>
@@ -120,6 +120,8 @@
 	<script type="text/javascript" src="../javascripts/_vendor/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="../javascripts/_vendor/handlebars-1.0.0.beta.6.js"></script>
 	<script type="text/javascript" src="../javascripts/_vendor/ember-1.0.0-pre.2.min.js"></script>
+	<script type="text/javascript" src="../javascripts/_vendor/ember-i18n-latest.js"></script>
+	<script type="text/javascript" src="../javascripts/i18n/messages.js"></script>
 	<script src="../javascripts/init.js"></script>
 	<script src="../javascripts/models/QuestionModel.js"></script>
 	<script src="../javascripts/models/ImageQuestion.js"></script>

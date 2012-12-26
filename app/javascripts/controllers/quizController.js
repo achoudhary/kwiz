@@ -5,12 +5,10 @@ App.Controller.quizController = Em.ArrayController.create({
     questionsAttempted: 0,
     currentQuestion: null,
     init: function() {
-        var that = this,
-        i= 0,
-        value=0;
-        for(i=quiz.questions.length-1;i>=0;i--){
+        var that = this, i = 0, value = 0;
+        for(i = quiz.questions.length-1;i >= 0;i--){
             value=quiz.questions[i];
-             if (value.type == 'fillin') {
+             if (value.type === 'fillin') {
                 that.pushObject(App.Model.ImageQuestion.create({
                     description: value.question,
                     type: value.type,
@@ -33,11 +31,11 @@ App.Controller.quizController = Em.ArrayController.create({
         $('button.next').attr('disabled', false);
     },
     startQuiz: function() {
-
+        
             App.get('router').transitionTo('root.quiz');
             this.set('currentIndex', 0);
             this.loadNextQuestion();
-
+        
     },
     newQuiz:function(){
         App.get('router').transitionTo('root.index');
@@ -51,47 +49,41 @@ App.Controller.quizController = Em.ArrayController.create({
     loadNextQuestion: function() {
         var that = this;
         $('button.next').attr('disabled', true);
-        if (this.get('content').length == this.get('currentIndex')) {
+        if (this.get('content').length === this.get('currentIndex')) {
             this.computeResult();
         } else {
             App.Controller.timerController.startTimer();
-            var index = this.get('currentIndex'),
-                question = this.get('content')[index];
+            var index = this.get('currentIndex'), question = this.get('content')[index];
             this.set('currentIndex', index + 1);
             this.set('currentQuestion', question);
             $(".options").empty();
-            if (question.type == 'radio') {
+            if (question.type === 'radio') {
                 question.options.forEach(function(data) {
                     App.Views.Options.create({
                         title: data
                     }).appendTo('.options');
 
-                })
+                });
             }
-
         }
 
     },
     computeResult: function() {
 
         App.Controller.timerController.reset();
-        var answered = this.get('content'),
-            questions = quiz.questions,
-            i = 0,
-            score = 0;
+        var answered = this.get('content'), questions = quiz.questions, i = 0, score = 0, that=this;
         for (i = 0; i < answered.length; i++) {
-            if (answered[i].userAnswer == questions[i].correctAnswer) {
+            if (answered[i].userAnswer === questions[i].correctAnswer) {
                 score += answered[i].weightage;
             }
         }
-        var that=this;
         App.Model.UserDetails=Em.Object.create({
             userName:that.get('username'),
             userScore:score
         });
-
+        
         App.get('router').transitionTo('results');
-
+        
     },
     getTotalQuestionsLength: function() {
         return this.get('content').length;
