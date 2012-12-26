@@ -15,7 +15,7 @@ App.Controller.timerController = Em.Object.create({
     updateTimeLeft:function(){
         var now = new Date(),
         diff = now - this._startedAt;
-        if(diff>=this.get('totalTime')){
+        if(diff>=this.get('totalTime')) {
             clearInterval(this.em);
             App.Controller.quizController.loadNextQuestion();
         }

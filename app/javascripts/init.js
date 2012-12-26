@@ -46,7 +46,7 @@ var quiz = {
         type: "radio",
         correctAnswer: "branch"
     }, {
-        question: "If you rearrange the letters CIFAIPC you would have the name of a(n):",
+        question: "If you rearrange the letters 'CIFAIPC' you would have the name of a(n):",
         answers: ["city", "animal", "ocean", "river", "country"],
         weight: 2,
         type: "radio",
@@ -77,8 +77,7 @@ App = Em.Application.create({
         classNames: ['application-view']
     }),
     ApplicationController: Ember.Controller.extend({
-        slogan: 'A framework for creating ambitious web applications',
-        isSlogan: true
+
     }),
     QuizView: Em.View.extend({
         templateName: 'quiz'

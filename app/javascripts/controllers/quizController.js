@@ -6,7 +6,7 @@ App.Controller.quizController = Em.ArrayController.create({
     currentQuestion: null,
     init: function() {
         var that = this,
-        i=0
+        i= 0,
         value=0;
         for(i=quiz.questions.length-1;i>=0;i--){
             value=quiz.questions[i];
@@ -33,11 +33,11 @@ App.Controller.quizController = Em.ArrayController.create({
         $('button.next').attr('disabled', false);
     },
     startQuiz: function() {
-        
+
             App.get('router').transitionTo('root.quiz');
             this.set('currentIndex', 0);
             this.loadNextQuestion();
-        
+
     },
     newQuiz:function(){
         App.get('router').transitionTo('root.index');
@@ -89,9 +89,9 @@ App.Controller.quizController = Em.ArrayController.create({
             userName:that.get('username'),
             userScore:score
         });
-        
+
         App.get('router').transitionTo('results');
-        
+
     },
     getTotalQuestionsLength: function() {
         return this.get('content').length;
