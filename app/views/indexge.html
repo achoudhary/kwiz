@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<link rel="stylesheet" href="../stylesheets/bootstrap.css" />
+	<link rel="stylesheet" href="../stylesheets/style.css" />
+</head>
+<body>
+	<div>
+		<script type="text/x-handlebars" data-template-name="application">
+		{{outlet}}
+		</script>
+	</div>
+	<script type="text/x-handlebars" data-template-name="login">
+		<div class="container">
+			<div class='header'>
+			    <img src="../images/quiz-logo_A.png" alt="quiz">
+			</div>
+			<div class="user-info-container">
+                <p class="lead">
+                {{t message.enter.name }}
+                </p>
+                <div class="text-box-container">
+                {{view App.Views.SearchTextField placeholder="Enter your name" valueBinding="App.Controller.quizController.username"}}
+                </div>
+			</div>
+			<div class="button-container">
+			    <div class='start-button-container'>
+			        <button class="btn btn-large rounded start" disabled {{action "startQuiz" target="App.Controller.quizController"}}>{{t message.button.start.game}}</button>
+			    </div>
+			    <div class="help-button-container">
+			        <button class="btn btn-large rounded">{{t message.button.help}}</button>
+			    </div>
+			</div>
+		</div>
+	</script>
+	<script type="text/x-handlebars" data-template-name="quiz">
+        <div class="question container">
+        <div class='header'>
+            <div class="timer-container">
+                <img class="time-up-image" src="../images/timer_times-up_B.png" />
+                <img class="start-timer-image" src="../images/timer_times-up_A.png" />
+                <div class="timer-hand"></div>
+                <img class="static-timer" src="../images/timer_start.png" />
+            </div>
+            <div class="question-header-panel row">
+                <div class="header-left">
+                    <div class="pull-right">
+                        {{t message.question}} {{App.Controller.quizController.currentIndex}}/{{App.Controller.quizController.getTotalQuestionsLength}}
+                    </div>
+                </div>
+                <div class="timer header-center">
+                    <div class="hand">{{App.Controller.timerController.timeLeft}}</div>
+                </div>
+                <div class="weightage header-right">
+                    <div class="pull-left">
+                        {{t message.weightage}} {{App.Controller.quizController.currentQuestion.weightage}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="question-container">
+            <div class='question-text'>{{App.Controller.quizController.currentQuestion.description}}</div>
+            <div class="options">
+
+            </div>
+            {{#if App.Controller.quizController.currentQuestion.imageURL}}
+                <img {{bindAttr src="App.Controller.quizController.currentQuestion.imageURL"}}/>
+                <div class="answerfield">
+                    {{view App.Views.AnswerField placeholder="Enter your answer here"}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="btn-controls">
+            <div class="span3 pull-left">
+                <div class="pull-right">
+                    <button class="button-no-background" {{action "endQuiz" target="App.Controller.quizController"}}>< {{t message.button.quit}}</button>
+                </div>
+            </div>
+            <button class="btn btn-large rounded next" disabled {{action "loadNextQuestion" target="App.Controller.quizController"}}>{{t message.button.next}}</button>
+            <div class="span3 pull-right">
+                <div class="pull-left">
+                    <button class="button-no-background" {{action "loadNextQuestion" target="App.Controller.quizController"}}>{{t message.button.pass}} ></button>
+                </div>
+            </div>
+        </div>
+</div>
+	</script>
+	<script type="text/x-handlebars" data-template-name="results">
+		<div class="container">
+            <div class='header'>
+                <img src="../images/quiz-logo_A.png" alt="quiz">
+            </div>
+            <div class="user-info-container">
+                <div class="score-container">
+               		<p class="result-message">
+               			{{t message.congratulations }}
+               	  </p>
+               	  <p class="score-display-text">
+               	  		{{t message.score}}
+               	 </p>
+               	 <p class="score-text">
+               	 	{{App.Model.UserDetails.userScore}}
+               	 </p>
+               </div>
+                
+            </div>
+            <div class="button-container">
+			    <div class='start-button-container'>
+			        <button class="btn btn-large rounded start"  {{action "startQuiz" target="App.Controller.quizController"}}>{{t message.button.start.game}}</button>
+			    </div>
+			    <div class="help-button-container">
+			        <button class="btn btn-large rounded" {{action "newQuiz" target="App.Controller.quizController"}}>{{t message.button.new.game}}</button>
+			    </div>
+			</div>
+		</div>
+
+	</script>
+	<script type="text/javascript" src="../javascripts/_vendor/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../javascripts/_vendor/handlebars-1.0.0.beta.6.js"></script>
+	<script type="text/javascript" src="../javascripts/_vendor/ember-1.0.0-pre.2.min.js"></script>
+	<script type="text/javascript" src="../javascripts/_vendor/ember-i18n-latest.js"></script>
+	<script src="../javascripts/init.js"></script>
+	<script src="../javascripts/models/QuestionModel.js"></script>
+	<script src="../javascripts/models/ImageQuestion.js"></script>
+	<script src="../javascripts/views/RadiobuttonView.js"></script>
+	<script src="../javascripts/views/UserInputField.js"></script>
+	<script src="../javascripts/controllers/timerController.js"></script>
+	<script src="../javascripts/controllers/quizController.js"></script>
+    <script type="text/javascript" src="../javascripts/i18n/german.js"></script>
+</body>
+</html>
