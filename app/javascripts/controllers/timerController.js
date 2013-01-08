@@ -34,5 +34,4 @@ App.Controller.timerController = Em.Object.create({
         }
         return pad(minutes) + ':' + pad(seconds - minutes * 60);
     }
-
 });

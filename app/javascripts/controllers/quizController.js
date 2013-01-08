@@ -9,7 +9,7 @@ App.Controller.quizController = Em.ArrayController.create({
         for(i = quiz.questions.length-1;i >= 0;i--){
             value=quiz.questions[i];
              if (value.type === 'fillin') {
-                that.pushObject(App.Model.ImageQuestion.create({
+                that.pushObject(App.Model.Question.create({
                     description: value.question,
                     type: value.type,
                     weightage: value.weight,
@@ -31,11 +31,11 @@ App.Controller.quizController = Em.ArrayController.create({
         $('button.next').attr('disabled', false);
     },
     startQuiz: function() {
-        
+
             App.get('router').transitionTo('root.quiz');
             this.set('currentIndex', 0);
             this.loadNextQuestion();
-        
+
     },
     newQuiz:function(){
         App.get('router').transitionTo('root.index');
@@ -81,9 +81,9 @@ App.Controller.quizController = Em.ArrayController.create({
             userName:that.get('username'),
             userScore:score
         });
-        
+
         App.get('router').transitionTo('results');
-        
+
     },
     getTotalQuestionsLength: function() {
         return this.get('content').length;
